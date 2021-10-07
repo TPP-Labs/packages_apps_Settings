@@ -30,6 +30,14 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
+    <!-- tpp Version  -->
+    <Preference
+        android:key="tpp_version"
+        android:title="@string/tpp_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.tppVersionPreferenceController"/>
+
     <!-- Security patch -->
     <Preference
         android:key="security_key"
