@@ -1,4 +1,4 @@
-package com.android.settings.aospb.misc;
+package com.android.settings.tpp.misc;
 
 import android.os.Bundle;
 
