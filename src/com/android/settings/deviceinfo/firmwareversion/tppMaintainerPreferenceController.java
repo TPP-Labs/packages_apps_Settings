@@ -17,7 +17,7 @@
 package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
-import android.content.res.Resources;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 
 import androidx.preference.Preference;
@@ -28,6 +28,7 @@ import com.android.settings.core.BasePreferenceController;
 public class tppMaintainerPreferenceController extends BasePreferenceController {
 
     private static final String TAG = "tppMaintainerPreferenceController";
+    private static final String MAINTAINER_STRING = "ro.custom.maintainer";
 
     public tppMaintainerPreferenceController(Context context, String key) {
         super(context, key);
@@ -38,7 +39,8 @@ public class tppMaintainerPreferenceController extends BasePreferenceController 
     }
 
     public CharSequence getSummary() {
-        String maintainer = mContext.getResources().getString(R.string.tpp_maintainer);
+        String maintainer = SystemProperties.get(MAINTAINER_STRING,
+                this.mContext.getString(R.string.device_info_default));
         return maintainer;
     }
 }
